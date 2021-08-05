@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login.Signup">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#37474f"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize">
+
+                <ImageView
+                    android:id="@+id/back_presssed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@color/purple_200"
+                    android:padding="15dp"
+                    android:src="@drawable/backbtn"></ImageView>
+
+                <ImageView
+                    android:id="@+id/search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@color/purple_200"
+                    android:padding="15dp"
+                    android:src="@drawable/search_icon"></ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="774dp">
+
+                <TextView
+                    android:id="@+id/signtxt"
+                    android:layout_width="189dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="117dp"
+                    android:layout_marginLeft="117dp"
+                    android:layout_marginEnd="106dp"
+                    android:layout_marginRight="106dp"
+                    android:gravity="center"
+                    android:text="@string/sign_up"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <EditText
+                    android:id="@+id/logem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="53dp"
+                    android:layout_below="@+id/signtxt"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="33dp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="195dp"
+                    android:layout_marginEnd="34dp"
+                    android:layout_marginRight="34dp"
+                    android:background="@drawable/layout_bg"
+                    android:hint="@string/enter_email"
+                    android:inputType="textEmailAddress"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:id="@+id/signname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="53dp"
+                    android:layout_below="@+id/logem"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="-124dp"
+                    android:layout_marginEnd="37dp"
+                    android:layout_marginRight="37dp"
+                    android:background="@drawable/layout_bg"
+                    android:hint="@string/enter_your_name"
+                    android:inputType="textPersonName"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:id="@+id/logpass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="53dp"
+                    android:layout_below="@+id/logem"
+                    android:layout_alignStart="@+id/logem"
+                    android:layout_alignLeft="@+id/logem"
+                    android:layout_alignEnd="@+id/logem"
+                    android:layout_alignRight="@+id/logem"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="-3dp"
+                    android:layout_marginLeft="-3dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="-2dp"
+                    android:layout_marginRight="-2dp"
+                    android:background="@drawable/layout_bg"
+                    android:hint="@string/enter_password"
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:id="@+id/repass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="57dp"
+                    android:layout_below="@+id/logpass"
+                    android:layout_alignStart="@+id/logpass"
+                    android:layout_alignLeft="@+id/logpass"
+                    android:layout_alignEnd="@+id/logpass"
+                    android:layout_alignRight="@+id/logpass"
+                    android:layout_marginStart="-2dp"
+                    android:layout_marginLeft="-2dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:background="@drawable/layout_bg"
+                    android:hint="Re Enter Password"
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/black" />
+
+                <Button
+                    android:id="@+id/logbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/repass"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginLeft="48dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="46dp"
+                    android:layout_marginRight="46dp"
+                    android:background="@color/black"
+                    android:onClick="signup"
+                    android:text="@string/sign_up"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp"
+                    app:backgroundTint="#0E0E0E" />
+
+                <TextView
+                    android:id="@+id/lognn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginLeft="42dp"
+                    android:layout_marginEnd="59dp"
+                    android:layout_marginRight="59dp"
+                    android:layout_marginBottom="210dp"
+                    android:onClick="HaveAccnt"
+                    android:text="Have an account?Click here"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/btnimg"
+                    android:layout_width="130dp"
+                    android:layout_height="66dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="78dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginRight="35dp"
+                    android:text="IMAGE"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="163dp"
+                    android:layout_height="61dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="78dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_toStartOf="@+id/btnimg"
+                    android:layout_toLeftOf="@+id/btnimg"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar2"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="69dp"
+                    android:layout_height="108dp"
+                    android:layout_above="@+id/logbtn"
+                    android:visibility="gone"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="162dp"
+                    android:layout_marginLeft="162dp"
+                    android:layout_marginEnd="180dp"
+                    android:layout_marginRight="180dp"
+                    android:layout_marginBottom="91dp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</ScrollView>

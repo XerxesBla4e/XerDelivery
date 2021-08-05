@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">XERMART</string>
+    <string name="powered_by">Nambari za Xeedes</string>
+    <string name="logo_name">Pata njia</string>
+    <string name="search_text">Tazama zote</string>
+    <string name="home">Nyumbani</string>
+    <string name="search">Tufuta</string>
+    <string name="categories">Jamii</string>
+    <string name="place">Mahali</string>
+    <string name="login">Ingia</string>
+    <string name="profile">Profaili</string>
+    <string name="logout">Kuondoka</string>
+    <string name="markets">Masoko</string>
+    <string name="rate_us">Kadiri yetu</string>
+    <string name="shop_with_us">duka na sisi</string>
+    <string name="xer_logo">xer_logo</string>
+    <string name="pick_image">Chagua picha</string>
+    <string name="car_rent">Kukodisha gari</string>
+    <string name="expand_all">Panua zote</string>
+    <string name="vaccination_points">Sehemu za chanjo</string>
+    <string name="french">Kifaransa</string>
+    <string name="jamaican">Mjamaika</string>
+    <string name="login1">Ingia</string>
+    <string name="enter_email">Ingiza barua pepe</string>
+    <string name="enter_password">Ingiza nywila</string>
+    <string name="title_activity_navigation">Navigation</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="enter_your_name">Ingiza jina lako</string>
+    <string name="enter_your_email">Ingiza barua pepe yako</string>
+    <string name="enter_your_password">Ingiza nywila yako</string>
+
+    <string name="menu_home">Nyumbani</string>
+    <string name="menu_gallery">Nyumba ya sanaa</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="title_activity_product_cat">ScrollingActivity</string>
+    <string name="large_text">
+    </string>
+    <string name="pizza">PIZZA</string>
+    <string name="signup">Jisajili</string>
+    <string name="re_enter_password">Injiza tena nywila</string>
+    <string name="sign_up">Jisajili</string>
+    <string name="login_log">Nyumbani</string>
+    <string name="title_activity_locations">Romani</string>
+    <string name="xer_mart">XerMart Delivery</string>
+    <string name="login2">Ingia</string>
+    <string name="forgot_password">Umesahau nywila</string>
+    <string name="logn">Ingia</string>
+    <string name="ee">Ingiza barua pepe</string>
+    <string name="ep">Ingiza nywila</string>
+    <string name="si">Weka sahihi</string>
+    <string name="forgot_password1">Umesahau nywila</string>
+    <string name="sign_up1">Jisajili</string>
+    <string name="select_language">Chagua lugha</string>
+
+    <string name="xercv">XerCov</string>
+    <string name="enter_phone_number">Ingiza nambari ya simu</string>
+    <string name="order">Agizo</string>
+    <string name="order_form">Fomu ya kuagiza</string>
+</resources>

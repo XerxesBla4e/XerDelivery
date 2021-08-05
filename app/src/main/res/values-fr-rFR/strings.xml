@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">XERMART</string>
+    <string name="powered_by">XerxesCodes</string>
+    <string name="logo_name">Va-t-en</string>
+    <string name="search_text">voir tout</string>
+    <string name="home">Domicile</string>
+    <string name="search">Chercher</string>
+    <string name="categories">Categories</string>
+    <string name="place">Endroit</string>
+    <string name="login">connexion</string>
+    <string name="profile">profil</string>
+    <string name="logout">Se deconnector</string>
+    <string name="markets">Marches</string>
+    <string name="rate_us">Evaluez nous</string>
+    <string name="shop_with_us">Achetez avec nous</string>
+    <string name="xer_logo">xer_logo</string>
+    <string name="pick_image">Choisir une image</string>
+    <string name="car_rent">Location de voiture</string>
+    <string name="expand_all">Developper tout</string>
+    <string name="vaccination_points">Points de vaccination</string>
+    <string name="french">Francais</string>
+    <string name="jamaican">Jamaiquaine</string>
+    <string name="login1">connexion</string>
+    <string name="enter_email">Entrez l\'e-mail</string>
+    <string name="enter_password">Enter le mot de passe</string>
+    <string name="title_activity_navigation">Navigation</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Domicile</string>
+    <string name="menu_gallery">Galerie</string>
+    <string name="menu_slideshow">Diaporama</string>
+    <string name="title_activity_product_cat">ScrollingActivity</string>
+    <string name="large_text">
+    </string>
+
+    <string name="enter_your_name">Tapez votre mot de passe</string>
+    <string name="enter_your_email">Entrer votre Email</string>
+    <string name="enter_your_password">Tapez votre mot de passe</string>
+
+    <string name="pizza">PIZZA</string>
+    <string name="signup">Inscrivez-vous</string>
+    <string name="re_enter_password">Retaper le mot de passe</string>
+    <string name="sign_up">Inscrivez-vous</string>
+    <string name="login_log">Connexion</string>
+    <string name="title_activity_locations">Carte</string>
+    <string name="xer_mart">XerMart Delivery</string>
+    <string name="login2">Connexion</string>
+    <string name="forgot_password">Mot de passe oublie</string>
+    <string name="logn">Connexion</string>
+    <string name="ee">Entrez l\'e-mail</string>
+    <string name="ep">Entrer le mot de passe</string>
+    <string name="si">S\'identifier</string>
+    <string name="forgot_password1">Mot de passe oublie</string>
+    <string name="sign_up1">S\'inscrire</string>
+    <string name="select_language">Choisir la langue</string>
+
+    <string name="xercv">XerCov</string>
+    <string name="enter_phone_number">Entrez le numero de telephone</string>
+    <string name="order">Ordre</string>
+    <string name="order_form">Bon de commande</string>
+</resources>

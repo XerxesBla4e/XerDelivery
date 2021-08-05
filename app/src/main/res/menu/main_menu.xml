@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<group
+    android:checkableBehavior="single">
+    <item
+        android:id="@+id/nav_home"
+        android:title="@string/home"
+        android:icon="@drawable/home"
+        />
+    <item
+        android:id="@+id/nav_search"
+        android:title="@string/search"
+        android:icon="@drawable/search"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/nav_categories"
+        android:title="@string/categories"
+        android:icon="@drawable/category"
+        />
+    <item
+        android:id="@+id/nav_place"
+        android:title="@string/place"
+        android:icon="@drawable/locale"
+        />
+
+
+
+</group>
+
+    <item android:title="profile">
+        <menu>
+            <group
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_login"
+                    android:title="@string/login"
+                    android:icon="@drawable/login"
+                    />
+                <item
+                    android:id="@+id/nav_profile"
+                    android:title="@string/profile"
+                    android:icon="@drawable/profile"
+                    />
+                <item
+                    android:id="@+id/nav_logout"
+                    android:title="@string/logout"
+                    android:icon="@drawable/logout"
+                    />
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="languages">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/changelanguage"
+                    android:title="@string/select_language"
+                    android:icon="@drawable/lingual"
+                    />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="share">
+        <menu>
+            <group android:checkableBehavior="none">
+                <item
+                    android:id="@+id/nav_share"
+                    android:title="@string/markets"
+                    android:icon="@drawable/shop"
+                    />
+
+                <item
+                    android:id="@+id/nav_rate_us"
+                    android:title="@string/rate_us"
+                    android:icon="@drawable/rate_us"
+                    />
+            </group>
+        </menu>
+    </item>
+</menu>
+
+
