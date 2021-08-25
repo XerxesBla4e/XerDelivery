@@ -62,4 +62,7 @@
     <string name="enter_phone_number">Ingiza nambari ya simu</string>
     <string name="order">Agizo</string>
     <string name="order_form">Fomu ya kuagiza</string>
+    <string name="xercov_delivery">XerCov Delivery</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_location">Map</string>
 </resources>

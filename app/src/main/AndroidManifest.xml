@@ -2,12 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.xermart">
+
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the "MyLocation" functionality.
     -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -16,9 +19,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialDesign">
-        <activity android:name=".forgotpass"></activity>
-        <activity android:name=".Logn" />
-        <activity android:name=".Activity.Main" />
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -31,11 +32,14 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
+        <activity android:name=".Activity.DeliveryGuy" />
         <activity
-            android:name=".Activity.Locations"
-            android:label="@string/title_activity_locations" />
+            android:name=".Activity.LocationActivity"
+            android:label="@string/title_activity_location"></activity>
+        <activity android:name=".forgotpass" />
+        <activity android:name=".Logn" />
+        <activity android:name=".Activity.Main" />
         <activity android:name=".Login.Signup" />
-        <activity android:name=".test" />
         <activity android:name=".User.AllCategories" />
         <activity android:name=".SplashScreen">
             <intent-filter>

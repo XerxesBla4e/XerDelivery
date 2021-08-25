@@ -1,5 +1,12 @@
 package com.example.xermart.Fragments;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,6 +17,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.xermart.Orders;
@@ -18,6 +26,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import static androidx.core.content.ContextCompat.getSystemService;
 
 public class FragmentOrder extends Fragment {
     private static final String TAG = "Order Fragment";
@@ -30,7 +40,6 @@ public class FragmentOrder extends Fragment {
         Log.d(TAG, "OnCreateView: started");
 
         View view = inflater.inflate(R.layout.purchasefrag, container, false);
-
         etname = view.findViewById(R.id.edtname);
         etemail = view.findViewById(R.id.edtemail);
         etnumber = view.findViewById(R.id.edtnum);
@@ -51,48 +60,49 @@ public class FragmentOrder extends Fragment {
 
     private void insertStudentData() {
 
+
         String name = etname.getText().toString();
         String email = etemail.getText().toString();
         String number = etnumber.getText().toString();
         String item = etitem.getText().toString();
 
-
-        if(name.isEmpty()){
+        if (name.isEmpty()) {
             etname.setError("Fill Name Field");
             etname.requestFocus();
             return;
         }
 
-        if(email.isEmpty()){
+        if (email.isEmpty()) {
             etemail.setError("Fill Email Field");
             etemail.requestFocus();
             return;
         }
 
-        if(number.isEmpty()){
+        if (number.isEmpty()) {
             etnumber.setError("Fill Telephone Field");
             etnumber.requestFocus();
             return;
         }
 
-        if(item.isEmpty()){
+        if (item.isEmpty()) {
             etitem.setError("Fill Item Field");
             etitem.requestFocus();
             return;
         }
 
-        Orders orders = new Orders(name,email,number,item);
+        Orders orders = new Orders(name, email, number, item);
 
         ordeDbRef.push().setValue(orders).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(getActivity(),"Order Made Successfully",Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(getActivity(),"Oops! something went wrong",Toast.LENGTH_SHORT).show();
+                if (task.isSuccessful()) {
+                    Toast.makeText(getActivity(), "Order Made Successfully", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getActivity(), "Oops! something went wrong", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
     }
+
 }

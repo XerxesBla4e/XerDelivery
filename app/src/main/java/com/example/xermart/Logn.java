@@ -150,9 +150,4 @@ public class Logn extends AppCompatActivity implements View.OnClickListener {
                     }
                 });
     }
-
-    /*
-    public void sgnh(View view) {
-        startActivity(new Intent(Logn.this, Signup.class));
-    }*/
 }

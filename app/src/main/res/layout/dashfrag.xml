@@ -63,7 +63,7 @@
             android:layout_marginTop="247dp"
             android:layout_marginEnd="-10dp"
             android:layout_marginRight="-10dp"
-            android:text="MARKETS"
+            android:text="TRACK ORDER"
             android:textSize="25sp"
             app:backgroundTint="#4CAF50" />
 
