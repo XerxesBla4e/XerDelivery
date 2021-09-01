@@ -18,7 +18,9 @@
         android:label="@string/xer_mart"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MaterialDesign">
+        android:theme="@style/Theme.MaterialDesign"
+        >
+        <uses-library android:name="com.google.android.maps"></uses-library>
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -30,7 +32,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="AIzaSyAdyfnX4Gze9qbaNQjpzy1gXznPXI2vsvE"/>
 
         <activity android:name=".Activity.DeliveryGuy" />
         <activity

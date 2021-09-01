@@ -1,3 +1,4 @@
+
 plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
@@ -57,6 +58,9 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'com.airbnb.android:lottie:3.7.0'
-    implementation 'com.android.volley:volley:1.1.1'
+    implementation 'com.android.volley:volley:1.2.1'
     implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.applozic.communication.uiwidget:mobicomkitui:5.8.4'
 }
+
+apply plugin : 'com.google.gms.google-services'

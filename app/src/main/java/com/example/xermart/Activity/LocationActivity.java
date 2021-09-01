@@ -101,7 +101,7 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
     }
 
     private double distance(Location deliveryGuy, Location client) {
-        double theta = deliveryGuy.getLongitude() - client.getLatitude();
+        double theta = deliveryGuy.getLongitude() - client.getLongitude();
         double dist = Math.sin(deg2rad(deliveryGuy.getLatitude()))
                 * Math.sin(deg2rad(client.getLatitude()))
                 * Math.cos(deg2rad(deliveryGuy.getLatitude()))

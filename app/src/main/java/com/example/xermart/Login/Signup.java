@@ -3,6 +3,7 @@ package com.example.xermart.Login;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,11 +19,17 @@ import com.example.xermart.Activity.Main;
 import com.example.xermart.Logn;
 import com.example.xermart.R;
 import com.example.xermart.Users;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 public class Signup extends AppCompatActivity {
     static final int IMG_PICKED_CODE = 11;
@@ -33,6 +40,8 @@ public class Signup extends AppCompatActivity {
     Uri image;
 
     private FirebaseAuth mAuth;
+    private DatabaseReference databaseReference;
+    private StorageReference storageReference;
 
     private EditText etemail, etname, etpassword, etrepassword;
     private String email, name, password, repassword;
@@ -71,7 +80,8 @@ public class Signup extends AppCompatActivity {
         btn = findViewById(R.id.btnimg);
         img = findViewById(R.id.imageView2);
         backbtn = findViewById(R.id.back_presssed);
-
+        databaseReference = FirebaseDatabase.getInstance().getReference("Users");
+        storageReference = FirebaseStorage.getInstance().getReference().child("UserImages");
     }
 
 
@@ -80,7 +90,8 @@ public class Signup extends AppCompatActivity {
         String name = etname.getText().toString().trim();
         String password = etpassword.getText().toString().trim();
         String repassword = etrepassword.getText().toString().trim();
-        
+        ProgressDialog dialog = new ProgressDialog(Signup.this);
+
         if (email.isEmpty()) {
             etemail.setError("Email Cant be empty");
             etemail.requestFocus();
@@ -128,27 +139,24 @@ public class Signup extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        Users users = new Users(name, email);
 
-                        if (task.isSuccessful()) {
-                            Users users = new Users(name, email);
+                        databaseReference
+                                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                .setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
 
-                            FirebaseDatabase.getInstance().getReference("Users")
-                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-
-                                    if (task.isSuccessful()) {
-                                        Intent intent = new Intent(Signup.this, Logn.class);
-                                        startActivity(intent);
-                                        progressBar.setVisibility(View.GONE);
-                                    } else {
-                                        Toast.makeText(Signup.this, "Registeration Failed", Toast.LENGTH_SHORT).show();
-                                        progressBar.setVisibility(View.GONE);
-                                    }
+                                if (task.isSuccessful()) {
+                                    Intent intent = new Intent(Signup.this, Logn.class);
+                                    startActivity(intent);
+                                    progressBar.setVisibility(View.GONE);
+                                } else {
+                                    Toast.makeText(Signup.this, "Registeration Failed", Toast.LENGTH_SHORT).show();
+                                    progressBar.setVisibility(View.GONE);
                                 }
-                            });
-                        }
+                            }
+                        });
                     }
                 });
 

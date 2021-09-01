@@ -51,7 +51,7 @@ import com.google.firebase.database.ValueEventListener;
 public class DeliveryGuy extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener, LocationListener {
     //firebase
-    DatabaseReference onlineRef, currentUserRef, counterRef, locati;
+    DatabaseReference onlineRef, currentUserRef, counterRef, location;
     FirebaseRecyclerAdapter<User, ListHolder> adapter;
 
     RecyclerView deliveryGuy;
@@ -80,7 +80,7 @@ public class DeliveryGuy extends AppCompatActivity implements GoogleApiClient.Co
         deliveryGuy.setLayoutManager(layoutManager);
 
 
-        locati = FirebaseDatabase.getInstance().getReference("Locations");
+        location = FirebaseDatabase.getInstance().getReference("Locations");
         onlineRef = FirebaseDatabase.getInstance().getReference().child(".info/connected");
         counterRef = FirebaseDatabase.getInstance().getReference("lastOnline");
         currentUserRef = FirebaseDatabase.getInstance().getReference("lastOnline")
@@ -134,7 +134,7 @@ public class DeliveryGuy extends AppCompatActivity implements GoogleApiClient.Co
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
         if (mLastLocation != null) {
             //update firebase
-            locati.child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+            location.child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                     .setValue(new Tracking(FirebaseAuth.getInstance().getCurrentUser().getEmail(),
                             FirebaseAuth.getInstance().getCurrentUser().getUid(),
                             String.valueOf(mLastLocation.getLatitude()),
@@ -204,28 +204,26 @@ public class DeliveryGuy extends AppCompatActivity implements GoogleApiClient.Co
             protected void onBindViewHolder(ListHolder listHolder, int i, User user) {
                 listHolder.txtEmail.setText(user.getEmail());
 
-                //item click listener
-/*
-                listHolder.itemClickListener = new ItemClickListener() {
-                    @Override
-                    public void onClick(View view, int position) {
+                 listHolder.txtEmail.setOnClickListener(new View.OnClickListener() {
+                     @Override
+                     public void onClick(View v) {
+                         if (!user.getEmail().equals(FirebaseAuth.getInstance().getCurrentUser().getEmail())) {
 
-                        if (user.getEmail().equals(FirebaseAuth.getInstance().getCurrentUser().getEmail())) {
-
-                            Intent map = new Intent(getApplicationContext(), LocationActivity.class);
-                            map.putExtra("email", user.getEmail());
-                            map.putExtra("lat", mLastLocation.getLatitude());
-                            map.putExtra("lng", mLastLocation.getLongitude());
-                            startActivity(map);
-                        }
-                    }
-                };
-*/
+                             Intent map = new Intent(DeliveryGuy.this, LocationActivity.class);
+                             map.putExtra("email",user.getEmail());
+                             map.putExtra("lat", mLastLocation.getLatitude());
+                             map.putExtra("lng", mLastLocation.getLongitude());
+                             startActivity(map);
+                         }
+                     }
+                 });
             }
         };
-        adapter.notifyDataSetChanged();
-        deliveryGuy.setAdapter(adapter);
-    }
+                adapter.notifyDataSetChanged();
+                deliveryGuy.setAdapter(adapter);
+
+        };
+
 
     private void setupSystem() {
         onlineRef.addValueEventListener(new ValueEventListener() {
