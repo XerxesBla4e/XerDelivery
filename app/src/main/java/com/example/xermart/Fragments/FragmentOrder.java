@@ -1,12 +1,5 @@
 package com.example.xermart.Fragments;
 
-import android.Manifest;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,17 +10,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
-import com.example.xermart.Orders;
+import com.example.xermart.models.Orders;
 import com.example.xermart.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import static androidx.core.content.ContextCompat.getSystemService;
 
 public class FragmentOrder extends Fragment {
     private static final String TAG = "Order Fragment";
@@ -51,14 +41,14 @@ public class FragmentOrder extends Fragment {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertStudentData();
+                insertOrderData();
             }
         });
 
         return view;
     }
 
-    private void insertStudentData() {
+    private void insertOrderData() {
 
 
         String name = etname.getText().toString();

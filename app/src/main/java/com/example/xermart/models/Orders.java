@@ -1,4 +1,4 @@
-package com.example.xermart;
+package com.example.xermart.models;
 
 public class Orders {
 

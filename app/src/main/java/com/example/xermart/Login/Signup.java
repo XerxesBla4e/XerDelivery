@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.xermart.Activity.Main;
@@ -44,9 +46,10 @@ public class Signup extends AppCompatActivity {
     private StorageReference storageReference;
 
     private EditText etemail, etname, etpassword, etrepassword;
+    private TextView tv;
     private String email, name, password, repassword;
     private ProgressBar progressBar;
-    private  ImageView backbtn;
+    private ImageView backbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +57,10 @@ public class Signup extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
 
         hooks();
+
+        Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/Baloo2-Regular.ttf");
+        tv.setTypeface(tf);
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,6 +87,7 @@ public class Signup extends AppCompatActivity {
         btn = findViewById(R.id.btnimg);
         img = findViewById(R.id.imageView2);
         backbtn = findViewById(R.id.back_presssed);
+        tv = findViewById(R.id.signtxt);
         databaseReference = FirebaseDatabase.getInstance().getReference("Users");
         storageReference = FirebaseStorage.getInstance().getReference().child("UserImages");
     }
@@ -116,7 +124,7 @@ public class Signup extends AppCompatActivity {
             etemail.setError("Email is invalid");
             etemail.requestFocus();
             return false;
-        }else if (password.length() < 6) {
+        } else if (password.length() < 6) {
             etpassword.setError("Min password is 6 characters!");
             etpassword.requestFocus();
             return false;

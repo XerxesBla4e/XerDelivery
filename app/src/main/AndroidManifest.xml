@@ -8,7 +8,7 @@
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the "MyLocation" functionality.
     -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
@@ -18,10 +18,17 @@
         android:label="@string/xer_mart"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MaterialDesign"
-        >
-        <uses-library android:name="com.google.android.maps"></uses-library>
+        android:theme="@style/Theme.MaterialDesign">
+        <receiver
+            android:name=".Broadcast.XerBC"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.AIRPLANE_MODE"></action>
+            </intent-filter>
+        </receiver>
 
+        <uses-library android:name="com.google.android.maps" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -32,12 +39,12 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAdyfnX4Gze9qbaNQjpzy1gXznPXI2vsvE"/>
+            android:value="AIzaSyAdyfnX4Gze9qbaNQjpzy1gXznPXI2vsvE" />
 
         <activity android:name=".Activity.DeliveryGuy" />
         <activity
             android:name=".Activity.LocationActivity"
-            android:label="@string/title_activity_location"></activity>
+            android:label="@string/title_activity_location" />
         <activity android:name=".forgotpass" />
         <activity android:name=".Logn" />
         <activity android:name=".Activity.Main" />
