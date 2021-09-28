@@ -24,16 +24,16 @@
         android:layout_above = "@+id/menu_slogan"
         android:textColor="@color/black"/>
 
-<ImageView
-    android:layout_width="40dp"
-    android:layout_height="40dp"
-    android:src="@drawable/menu_icon"
-    android:layout_above="@+id/app_name"/>
+    <ImageView
+        android:layout_width="61dp"
+        android:layout_height="54dp"
+        android:layout_above="@+id/app_name"
+        android:src="@drawable/crt" />
 
 <ImageView
     android:layout_width="160dp"
     android:layout_height="175dp"
-    android:src="@drawable/fret"
+    android:src="@drawable/crt"
     android:layout_alignParentRight="true"
     android:layout_alignParentBottom="true"/>
 

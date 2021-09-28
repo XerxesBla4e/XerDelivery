@@ -1,9 +1,9 @@
 package com.example.xermart.models;
 
 public class User {
-    private String email,status;
+    private String email, status;
 
-    public User(){
+    public User() {
 
     }
 

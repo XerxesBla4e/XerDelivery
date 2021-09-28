@@ -9,6 +9,6 @@ public class XerBC extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        Toast.makeText(context,"",Toast.LENGTH_SHORT).show();
+        Toast.makeText(context,"Airoplane Mode Activated",Toast.LENGTH_SHORT).show();
     }
 }

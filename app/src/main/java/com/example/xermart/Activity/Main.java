@@ -8,7 +8,6 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -20,12 +19,11 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.example.xermart.FragAdapter.PagerAdapter;
+import com.example.xermart.Fragments.FragmentCart;
 import com.example.xermart.Fragments.FragmentCategory;
 import com.example.xermart.Fragments.FragmentMainMenu;
-import com.example.xermart.Fragments.FragmentOrder;
 import com.example.xermart.Logn;
 import com.example.xermart.R;
-import com.example.xermart.User.AllCategories;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -41,6 +39,10 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
 
     private PagerAdapter mPagerAdapter;
     private ViewPager mViewPager;
+    //  int currentPage;
+
+    //  Stack<Integer> pageHistory;
+    //  boolean saveToHistory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,12 +68,34 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
 
         setupViewPager(mViewPager);
     }
+        /*
+        mViewPager.setOffscreenPageLimit(5);
+        pageHistory = new Stack<Integer>();
+        mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                if (saveToHistory)
+                    pageHistory.push(currentPage);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+        saveToHistory = true;
+    }*/
 
     private void setupViewPager(ViewPager viewPager) {
         PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new FragmentMainMenu(), "Main Fragment");
         adapter.addFragment(new FragmentCategory(), "Category Fragment");
-        adapter.addFragment(new FragmentOrder(), "Order Fragment");
+        adapter.addFragment(new FragmentCart(), "Cart Fragment");
 
         viewPager.setAdapter(adapter);
     }
@@ -101,17 +125,32 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
-        } else
-
+        } else {
             super.onBackPressed();
+        }
+
+        if (mViewPager.getCurrentItem() == 0) {
+            super.onBackPressed();
+        } else {
+            mViewPager.setCurrentItem(mViewPager.getCurrentItem() - 1);
+        }
     }
+        /*
+        if (pageHistory.empty()) {
+            super.onBackPressed();
+        } else {
+            saveToHistory = false;
+            mViewPager.setCurrentItem(pageHistory.pop().intValue());
+            saveToHistory = true;
+        }
+  */
 
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_categories:
-                startActivity(new Intent(getApplicationContext(), AllCategories.class));
+                mViewPager.setCurrentItem(1);
                 break;
             case R.id.changelanguage:
                 showChangeLanguageDialog();

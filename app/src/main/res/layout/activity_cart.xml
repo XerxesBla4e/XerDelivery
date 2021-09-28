@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#37474f">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <Button
+        android:id="@+id/insert"
+        android:layout_width="244dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/qty"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="81dp"
+        android:layout_marginLeft="81dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="86dp"
+        android:layout_marginRight="86dp"
+        android:background="@drawable/layout_bg"
+        android:text="ADD TO CART"
+        android:textSize="25sp"
+        android:typeface="sans"
+        app:backgroundTint="#0C0C0C" />
+
+    <ImageView
+        android:id="@+id/prodimg"
+        android:layout_width="394dp"
+        android:layout_height="226dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="108dp"
+        android:layout_marginLeft="108dp"
+        android:layout_marginEnd="138dp"
+        android:layout_marginRight="138dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <TextView
+        android:id="@+id/textitmname"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_below="@+id/prodimg"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:background="@drawable/layout_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/textitmprice"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_below="@+id/textitmname"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:background="@drawable/layout_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/textmarket"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_below="@+id/textitmprice"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:background="@drawable/layout_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/textvendorname"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_below="@+id/textmarket"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:background="@drawable/layout_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/qty"
+            android:layout_width="125dp"
+            android:layout_height="68dp"
+            android:layout_below="@+id/textvendorname"
+            android:layout_marginStart="23dp"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_toStartOf="@+id/minus"
+            android:layout_toLeftOf="@+id/minus"
+            android:layout_toEndOf="@+id/add"
+            android:layout_toRightOf="@+id/add"
+            android:background="@drawable/layout_bg"
+            android:gravity="center"
+            android:hint="Quantity"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textSize="25sp">
+
+        </EditText>
+
+        <ImageView
+            android:id="@+id/add"
+            android:layout_width="84dp"
+            android:layout_height="52dp"
+            android:layout_below="@+id/textvendorname"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="31dp"
+            android:layout_marginLeft="31dp"
+            android:layout_marginTop="19dp"
+            android:background="@color/purple_200"
+            app:srcCompat="@android:drawable/ic_menu_add" />
+
+        <ImageView
+            android:id="@+id/minus"
+            android:layout_width="95dp"
+            android:layout_height="59dp"
+            android:layout_below="@+id/textvendorname"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:background="@color/purple_200"
+            app:srcCompat="@drawable/reduce"
+            tools:ignore="VectorDrawableCompat" />
+    </RelativeLayout>
+</ScrollView>

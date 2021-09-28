@@ -57,10 +57,11 @@
     <string name="select_language">Select Language</string>
     <string name="xercv">XerCov</string>
     <string name="enter_your_email">Enter Your Email</string>
-    <string name="enter_phone_number">Enter Phone Number</string>
     <string name="order">ORDER</string>
     <string name="order_form">ORDER FORM</string>
     <string name="xercov_delivery">XerCov Delivery</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_location">Map</string>
+    <string name="enter_quantity">Enter Quantity</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
 </resources>

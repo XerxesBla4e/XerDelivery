@@ -14,6 +14,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.example.xermart.Activity.DeliveryGuy;
 import com.example.xermart.Activity.Main;
+import com.example.xermart.Admin.InsertProduct;
 import com.example.xermart.Broadcast.XerBC;
 import com.example.xermart.R;
 
@@ -24,6 +25,7 @@ public class FragmentMainMenu extends Fragment {
     private Button product;
     private Button marketloc;
     private Button order;
+    private Button item;
     IntentFilter intentFilter;
     XerBC objreceiver;
 
@@ -32,34 +34,49 @@ public class FragmentMainMenu extends Fragment {
 
         intentFilter = new IntentFilter("android.intent.action.AIRPLANE_MODE");
         objreceiver = new XerBC();
-        LocalBroadcastManager.getInstance(getContext()).registerReceiver(objreceiver,intentFilter);
+        LocalBroadcastManager.getInstance(getContext()).registerReceiver(objreceiver, intentFilter);
 
 
         product = (Button) view.findViewById(R.id.btnprod);
         marketloc = (Button) view.findViewById(R.id.btnshop);
         order = (Button) view.findViewById(R.id.btnord);
+        item = (Button) view.findViewById(R.id.item2);
 
         Log.d(TAG, "OnCreateView: started");
 
         product.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /*
+                Intent intent = new Intent(getActivity(), RetrieveData.class);
+                startActivity(intent);*/
                 ((Main) getActivity()).setViewPager(1);
             }
         });
 
+        /*
         order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((Main) getActivity()).setViewPager(2);
             }
-        });
+        });*/
 
         marketloc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), DeliveryGuy.class);
                 startActivity(intent);
+            }
+        });
+
+        item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((Main) getActivity()).setViewPager(2);
+                /*
+                Intent intent = new Intent(getActivity(), InsertProduct.class);
+                startActivity(intent);*/
             }
         });
 

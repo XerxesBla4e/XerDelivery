@@ -26,7 +26,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.xermart.ItemClickListener;
 import com.example.xermart.R;
 import com.example.xermart.models.Tracking;
 import com.example.xermart.models.User;
@@ -204,25 +203,27 @@ public class DeliveryGuy extends AppCompatActivity implements GoogleApiClient.Co
             protected void onBindViewHolder(ListHolder listHolder, int i, User user) {
                 listHolder.txtEmail.setText(user.getEmail());
 
-                 listHolder.txtEmail.setOnClickListener(new View.OnClickListener() {
-                     @Override
-                     public void onClick(View v) {
-                         if (!user.getEmail().equals(FirebaseAuth.getInstance().getCurrentUser().getEmail())) {
+                listHolder.txtEmail.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (!user.getEmail().equals(FirebaseAuth.getInstance().getCurrentUser().getEmail())) {
 
-                             Intent map = new Intent(DeliveryGuy.this, LocationActivity.class);
-                             map.putExtra("email",user.getEmail());
-                             map.putExtra("lat", mLastLocation.getLatitude());
-                             map.putExtra("lng", mLastLocation.getLongitude());
-                             startActivity(map);
-                         }
-                     }
-                 });
+                            Intent map = new Intent(DeliveryGuy.this, LocationActivity.class);
+                            map.putExtra("email", user.getEmail());
+                            map.putExtra("lat", mLastLocation.getLatitude());
+                            map.putExtra("lng", mLastLocation.getLongitude());
+                            startActivity(map);
+                        }
+                    }
+                });
             }
         };
-                adapter.notifyDataSetChanged();
-                deliveryGuy.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+        deliveryGuy.setAdapter(adapter);
 
-        };
+    }
+
+    ;
 
 
     private void setupSystem() {
@@ -233,6 +234,7 @@ public class DeliveryGuy extends AppCompatActivity implements GoogleApiClient.Co
                     currentUserRef.onDisconnect().removeValue();
                     counterRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                             .setValue(new User(FirebaseAuth.getInstance().getCurrentUser().getEmail(), "Online"));
+
                     adapter.notifyDataSetChanged();
                 }
             }
@@ -315,14 +317,14 @@ public class DeliveryGuy extends AppCompatActivity implements GoogleApiClient.Co
     protected void onStart() {
         super.onStart();
         adapter.startListening();
-        if(mGoogleApiClient != null){
+        if (mGoogleApiClient != null) {
             mGoogleApiClient.connect();
         }
     }
 
     protected void onStop() {
         adapter.stopListening();
-        if(mGoogleApiClient != null){
+        if (mGoogleApiClient != null) {
             mGoogleApiClient.disconnect();
         }
         super.onStop();

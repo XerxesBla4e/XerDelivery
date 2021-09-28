@@ -3,8 +3,10 @@ package com.example.xermart.Login;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
@@ -45,7 +47,7 @@ public class Signup extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private StorageReference storageReference;
 
-    private EditText etemail, etname, etpassword, etrepassword;
+    private EditText etemail, etname, etpassword, etrepassword, ettel;
     private TextView tv;
     private String email, name, password, repassword;
     private ProgressBar progressBar;
@@ -88,6 +90,7 @@ public class Signup extends AppCompatActivity {
         img = findViewById(R.id.imageView2);
         backbtn = findViewById(R.id.back_presssed);
         tv = findViewById(R.id.signtxt);
+        ettel = findViewById(R.id.telnum);
         databaseReference = FirebaseDatabase.getInstance().getReference("Users");
         storageReference = FirebaseStorage.getInstance().getReference().child("UserImages");
     }
@@ -98,6 +101,7 @@ public class Signup extends AppCompatActivity {
         String name = etname.getText().toString().trim();
         String password = etpassword.getText().toString().trim();
         String repassword = etrepassword.getText().toString().trim();
+        String phonenumber = ettel.getText().toString().trim();
         ProgressDialog dialog = new ProgressDialog(Signup.this);
 
         if (email.isEmpty()) {
@@ -128,6 +132,10 @@ public class Signup extends AppCompatActivity {
             etpassword.setError("Min password is 6 characters!");
             etpassword.requestFocus();
             return false;
+        } else if (phonenumber.isEmpty()) {
+            etpassword.setError("PhoneNumber Field Cant be empty");
+            etpassword.requestFocus();
+            return false;
         }
         return true;
     }
@@ -141,13 +149,14 @@ public class Signup extends AppCompatActivity {
         String email = etemail.getText().toString().trim();
         String name = etname.getText().toString().trim();
         String password = etpassword.getText().toString().trim();
+        String phonenumber = ettel.getText().toString().trim();
 
         progressBar.setVisibility(View.VISIBLE);
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Users users = new Users(name, email);
+                        Users users = new Users(name, email, phonenumber);
 
                         databaseReference
                                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())

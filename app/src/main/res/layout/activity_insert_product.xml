@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#37474f"
+    tools:context=".Admin.InsertProduct">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="374dp"
+            android:layout_height="219dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.448"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            tools:ignore="MissingConstraints"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <EditText
+            android:id="@+id/itemname"
+            android:layout_width="317dp"
+            android:layout_height="77dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="84dp"
+            android:layout_marginRight="84dp"
+            android:background="@drawable/layout_bg"
+            android:hint="Enter Item Name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.169"
+            app:layout_constraintStart_toStartOf="@+id/imageButton"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton"></EditText>
+
+        <EditText
+            android:id="@+id/price"
+            android:layout_width="322dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="156dp"
+            android:layout_marginEnd="84dp"
+            android:layout_marginRight="84dp"
+            android:background="@drawable/layout_bg"
+            android:hint="Enter Price"
+            app:layout_constraintEnd_toEndOf="@+id/itemname"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/itemname"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton"></EditText>
+
+        <Button
+            android:id="@+id/btnadd"
+            android:layout_width="167dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="48dp"
+            android:text="Upload"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.315"
+            app:layout_constraintStart_toStartOf="@+id/price"
+            app:layout_constraintTop_toBottomOf="@+id/price" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="177dp"
+            android:layout_height="69dp"
+            android:layout_marginTop="48dp"
+            android:gravity="center"
+            android:text="Select Item Image"
+            android:textColor="@color/white"
+            android:textSize="23dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.132"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
